@@ -1,0 +1,212 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 m-auto mt-3">
+      <div class="card bg-success p-2 text-dark bg-opacity-25">
+        <div class="card-header">
+          <h1>ReactiveForm</h1>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="registerForm">
+            <div class="row mb-4">
+              <div class="col-sm-6">
+                <label class="form-label">First Name</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="First Name"
+                  formControlName="fname"
+                />
+                <small
+                  class="text-danger"
+                  *ngIf="Fname.errors?.['required']&&(Fname.dirty||Fname.touched)"
+                >
+                  First Name is required
+                </small>
+                <small
+                  class="text-danger"
+                  *ngIf="Fname.errors?.['minlength']&&(Fname.dirty||Fname.touched)"
+                >
+                  must be minimum length 3 letters
+                </small>
+                <small
+                  class="text-danger"
+                  *ngIf="Fname.errors?.['pattern']&&(Fname.dirty||Fname.touched)"
+                >
+                  First Name should be Alphabet
+                </small>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label">Last Name</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Last Name"
+                  formControlName="lname"
+                />
+                <small
+                  class="text-danger"
+                  *ngIf="Lname.errors?.['required']&&(Lname.dirty||Lname.touched)"
+                >
+                  last name is required
+                </small>
+                <small
+                  class="text-danger"
+                  *ngIf="Lname.errors?.['minlength']&&(Lname.dirty||Lname.touched)"
+                >
+                  must be minimum length 3 letters
+                </small>
+                <small
+                  class="text-danger"
+                  *ngIf="Lname.errors?.['pattern']&&(Lname.dirty||Lname.touched)"
+                >
+                  First Name should be Alphabet
+                </small>
+              </div>
+            </div>
+
+            <div class="row mb-4">
+              <div class="col-sm-6">
+                <label class="form-label">User Name</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="User Name"
+                  formControlName="uname"
+                />
+                <small
+                  class="text-danger"
+                  *ngIf="user.errors?.['required']&&(user.dirty||user.touched)"
+                >
+                  user name is required
+                </small>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label">Contact Number</label>
+                <input
+                  class="form-control"
+                  type="tel"
+                  placeholder="Enter  ur phone Number"
+                  formControlName="mobile"
+                />
+                <small
+                  class="text-danger"
+                  *ngIf="number.errors?.['required']&&(number.dirty||number.touched)"
+                >
+                  Mobile number is required
+                </small>
+                <small
+                  class="text-danger"
+                  *ngIf="number.errors?.['pattern']&&(number.dirty||number.touched)"
+                >
+                  Mobile numbers is invalid
+                </small>
+                <small
+                  class="text-danger"
+                  *ngIf="number.errors?.['minlength']&&(number.dirty||number.touched)"
+                >
+                  Enter Valid Number
+                </small>
+                <small
+                  class="text-danger"
+                  *ngIf="number.errors?.['maxlength']&&(number.dirty||number.touched)"
+                >
+                  Enter 10 numbers only
+                </small>
+              </div>
+            </div>
+
+            <div class="row mb-4">
+              <div class="col-sm-6">
+                <label class="form-label">emailid</label>
+                <input
+                  class="form-control"
+                  type="email"
+                  placeholder="Email"
+                  formControlName="email"
+                />
+                <small
+                  class="text-danger"
+                  *ngIf="mail.errors?.['required']&&(mail.dirty||mail.touched)"
+                >
+                  mail is required
+                </small>
+                <small
+                  class="text-danger"
+                  *ngIf="mail.errors?.['email']&&(mail.dirty||mail.touched)"
+                >
+                  enter valid email
+                </small>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label">Password</label>
+                <input
+                  class="form-control"
+                  type="password"
+                  placeholder="Password"
+                  formControlName="password"
+                />
+                <small
+                  class="text-danger"
+                  *ngIf="pwd.errors?.['required']&&(pwd.dirty||pwd.touched)"
+                >
+                  password is required
+                </small>
+                <small
+                  class="text-danger"
+                  *ngIf="pwd.errors?.['minlength']&&(pwd.dirty||pwd.touched)"
+                >
+                  Enter valid valid password
+                </small>
+                <small
+                  class="text-danger"
+                  *ngIf="pwd.errors?.['maxlength']&&(pwd.dirty||pwd.touched)"
+                >
+                  password must be 8 valid character
+                </small>
+              </div>
+            </div>
+
+            <div class="row mb-4">
+              <div class="col-sm-6">
+                <label class="form-label">CPassword</label>
+                <input
+                  class="form-control"
+                  type="password"
+                  placeholder="CPassword"
+                  formControlName="cpassword"
+                />
+                <small
+                  class="text-danger"
+                  *ngIf="cpwd.errors?.['required']&&(cpwd.dirty||cpwd.touched)"
+                >
+                  password is required
+                </small>
+              </div>
+              <div class="col-sm-6 mt-4">
+                <label class="form-label">Checkbox</label>
+                <input type="checkbox" formControlName="checkbox" />
+                <small
+                  class="text-danger"
+                  *ngIf="check.errors?.['required']&&(check.dirty||check.untouched)"
+                >
+                  click check box
+                </small>
+              </div>
+            </div>
+            <div class="row"></div>
+            <div class="text-center mt-3">
+              <button
+                class="btn btn-success w-50"
+                type="submit"
+                [disabled]="registerForm.invalid"
+                (click)="Registration()"
+              >
+                Register
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

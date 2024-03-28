@@ -1,0 +1,108 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 m-auto">
+      <div class="card">
+        <div class="card-header">
+          <h1>Template Driven forms</h1>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="RegForm">
+            <div class="row">
+             
+              <div class="col-sm-6 m-auto">
+                <label class="form-label">First Name</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="First Name"
+                  formControlName="fname"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 m-auto">
+                <label class="form-label">Last Name</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Last Name"
+                  formControlName="lname"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 m-auto">
+                <label class="form-label">User Name</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="User Name"
+                  formControlName="uname"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 m-auto">
+                <label class="form-label">Contact Number</label>
+                <input
+                  class="form-control"
+                  type="number"
+                  placeholder="Enter  ur phone Number"
+                  formControlName="mobile"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 m-auto">
+                <label class="form-label">emailid</label>
+                <input
+                  class="form-control"
+                  type="email"
+                  placeholder="Email"
+                  formControlName="email"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 m-auto">
+                <label class="form-label">Password</label>
+                <input
+                  class="form-control"
+                  type="password"
+                  placeholder="Password"
+                  formControlName="password"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 m-auto">
+                <label class="form-label">CPassword</label>
+                <input
+                  class="form-control"
+                  type="password"
+                  placeholder="CPassword"
+                  formControlName="cpassword"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 m-auto">
+                <label class="form-label">Checkbox</label>
+                <input type="checkbox" formControlName="checkbox" />
+              </div>
+            </div>
+            <div class="text-center">
+              <button
+                class="btn btn-success"
+                type="submit"
+                (click)="Registration()"
+              >
+                Register
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
